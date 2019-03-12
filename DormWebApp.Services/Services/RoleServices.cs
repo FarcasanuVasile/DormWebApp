@@ -37,12 +37,14 @@ namespace DormWebApp.Services.Services
 
         public void EditRole(Role role)
         {
-
+            roleRepository.Update(role);
+            unitOfWork.Commit();
         }
 
         public void DeleteRole(Role role)
         {
-
+            roleRepository.Delete(role);
+            unitOfWork.Commit();
         }
 
         public bool ExistingRole(string roleName)
