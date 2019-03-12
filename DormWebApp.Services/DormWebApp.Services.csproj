@@ -42,10 +42,12 @@
   <ItemGroup>
     <Compile Include="Interfaces\IDormServices.cs" />
     <Compile Include="Interfaces\IFloorServices.cs" />
+    <Compile Include="Interfaces\IRoleServices.cs" />
     <Compile Include="Interfaces\IUserServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DormServices.cs" />
     <Compile Include="Services\FloorServices.cs" />
+    <Compile Include="Services\RoleServices.cs" />
     <Compile Include="Services\RoomServices.cs" />
     <Compile Include="Services\UserServices.cs" />
   </ItemGroup>
