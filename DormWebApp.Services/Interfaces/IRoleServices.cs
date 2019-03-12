@@ -9,7 +9,7 @@ namespace DormWebApp.Services.Interfaces
 {
     interface IRoleServices
     {
-        void AddRole(Role role);
+        bool AddRole(Role role);
         void EditRole(Role role);
         void DeleteRole(Role role);
         bool ExistingRole(string name);

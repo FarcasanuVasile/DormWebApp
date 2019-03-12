@@ -22,9 +22,17 @@ namespace DormWebApp.Services.Services
             this.roleRepository = new Repository<Role>(dbFactory);
         }
 
-        public void AddRole(Role role)
+        public bool AddRole(Role role)
         {
-
+            var result = false;
+            var existingRole = ExistingRole(role.Name);
+            if (!existingRole)
+            {
+                roleRepository.Add(role);
+                unitOfWork.Commit();
+                result = true;
+            }
+            return result;
         }
 
         public void EditRole(Role role)
