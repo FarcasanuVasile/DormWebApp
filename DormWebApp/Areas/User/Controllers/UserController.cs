@@ -19,7 +19,7 @@ namespace DormWebApp.Areas.User.Controllers
         private IUserServices userServices;
         public UserController()
         {
-            var dbFactory = new DatabaseFactory();
+            dbFactory = new DatabaseFactory();
             this.userServices = new UserServices(dbFactory);
             this.userRepository = new Repository<Domain.Entities.User>(dbFactory);
             this.rolesRepository = new Repository<Domain.Entities.Role>(dbFactory);

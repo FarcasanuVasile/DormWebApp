@@ -27,7 +27,7 @@ namespace DormWebApp.Services.Services
         {
             user.Role = roleRepository.GetById(2);
             user.RoleId = 2;
-            user.Role.Name = "User2";
+            user.Role.Name = "User";
             user.IsActive = true;
             user.RegisterOn = DateTime.Now;
             userRepository.Add(user);

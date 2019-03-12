@@ -21,10 +21,11 @@ namespace DormWebApp.Areas.Admin.Controllers
         private Repository<Domain.Entities.Room> roomRepository;
         private IDormServices dormServices;
         private IFloorServices floorServices;
+        private DatabaseFactory dbFactory;
 
         public DormController()
         {
-            var dbFactory = new DatabaseFactory();
+            dbFactory = new DatabaseFactory();
             this.unitOfWork = new UnitOfWork(dbFactory);
             this.dormRepository = new Repository<Domain.Entities.Dorm>(dbFactory);
             this.floorRepository = new Repository<Domain.Entities.Floor>(dbFactory);

@@ -153,8 +153,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DormController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
     <Compile Include="Areas\Admin\Models\Dorm.cs" />
     <Compile Include="Areas\Admin\Models\Floor.cs" />
+    <Compile Include="Areas\Admin\Models\Role.cs" />
     <Compile Include="Areas\Admin\Models\Room.cs" />
     <Compile Include="Areas\User\Controllers\UserController.cs" />
     <Compile Include="Areas\User\Models\Role.cs" />
@@ -195,6 +197,7 @@
     <Content Include="Areas\User\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\User\Views\User\Index.cshtml" />
     <Content Include="Areas\User\Views\User\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Role\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
