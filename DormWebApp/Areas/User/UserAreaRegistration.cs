@@ -17,7 +17,7 @@ namespace DormWebApp.Areas.User
             context.MapRoute(
                 "User_default",
                 "User/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller = "User", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
