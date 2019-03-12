@@ -31,6 +31,7 @@ namespace DormWebApp.Areas.User.Controllers
         public ActionResult Index(string sortOrder , string searchString)
         {
             var users = userRepository.GetAll();
+            var roles = rolesRepository.GetAll();
             IEnumerable<Models.User> usersView = users.Select(u => new Models.User {
                 Id = u.Id,
                 FirstName = u.FirstName,
@@ -39,7 +40,8 @@ namespace DormWebApp.Areas.User.Controllers
                 Email = u.Email,
                 IsActive = u.IsActive,
                 RoleId = u.RoleId,
-                RegisterOn = u.RegisterOn
+                RegisterOn = u.RegisterOn,
+                RoleName = rolesRepository.GetById(u.RoleId).Name
             });
             //var ss = DormIdentity.CurrentUser.Id;
             ViewBag.CurrentSort = sortOrder;

@@ -22,6 +22,7 @@ namespace DormWebApp.Areas.User.Models
         public bool IsActive { get; set; }
         public DateTime? RegisterOn { get; set; }
         public string UniqueKey { get; set; }
+        [Display(Name = "User Type")]
         public string RoleName { get; set; }
 
         public virtual Role Role { get; set; }

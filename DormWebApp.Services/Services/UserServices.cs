@@ -12,18 +12,22 @@ namespace DormWebApp.Services.Services
     public class UserServices : IUserServices
     {
         private DatabaseFactory databaseFactory;
+        private Repository<Role> roleRepository;
         private Repository<User> userRepository;
         private IUnitOfWork unitOfWork;
 
         public UserServices(DatabaseFactory dbFactory)
         {
             this.databaseFactory = dbFactory;
+            this.roleRepository = new Repository<Role>(databaseFactory);
             this.userRepository = new Repository<User>(databaseFactory);
             this.unitOfWork = new UnitOfWork(databaseFactory);
         }
         public void AddUser(User user)
         {
+            user.Role = roleRepository.GetById(2);
             user.RoleId = 2;
+            user.Role.Name = "User2";
             user.IsActive = true;
             user.RegisterOn = DateTime.Now;
             userRepository.Add(user);
