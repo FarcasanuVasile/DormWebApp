@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DormWebApp.Areas.Admin.Models.Room>
 
 @{
-    ViewBag.Title = "RoomsOfFloor";
+    ViewBag.Title = "Rooms Of Floor";
 }
 
 <h2>RoomsOfFloor</h2>
@@ -9,8 +9,8 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
+<table class="table rooms-wrapper">
+   <!-- <tr>
         <th>
             @Html.DisplayNameFor(model => model.RoomNo)
         </th>
@@ -21,10 +21,10 @@
             @Html.DisplayNameFor(model => model.IsAvaible)
         </th>
         <th></th>
-    </tr>
+    </tr> -->
 
 @foreach (var item in Model) {
-    <tr>
+    <tr class="room">
         <td>
             @Html.DisplayFor(modelItem => item.RoomNo)
         </td>

@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+.room{
+    display:flex;
+    flex-direction:column;
+}
+.rooms-wrapper tbody{
+    display:grid;
+    grid-template-columns:repeat(4,25%);
+}
