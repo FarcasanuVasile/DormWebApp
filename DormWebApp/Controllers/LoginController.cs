@@ -33,7 +33,7 @@ namespace DormWebApp.Controllers
             if (ModelState.IsValid)
             {
                 var user = this.userService.GetUserByEmail(model.Email);
-                string hashedPassword = Security.HashSHA1(model.Password + user.UniqueKey);
+                string hashedPassword = SecurityServices.PasswordHash(model.Password);
 
                 if(hashedPassword == user.Password)
                 {

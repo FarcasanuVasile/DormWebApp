@@ -30,6 +30,7 @@ namespace DormWebApp.Services.Services
             user.Role.Name = "User";
             user.IsActive = true;
             user.RegisterOn = DateTime.Now;
+            user.Password = SecurityServices.PasswordHash(user.Password);
             userRepository.Add(user);
             unitOfWork.Commit();
         }

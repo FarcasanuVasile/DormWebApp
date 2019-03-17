@@ -153,7 +153,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DormController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FloorController.cs" />
     <Compile Include="Areas\Admin\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RoomController.cs" />
     <Compile Include="Areas\Admin\Models\Dorm.cs" />
     <Compile Include="Areas\Admin\Models\Floor.cs" />
     <Compile Include="Areas\Admin\Models\Role.cs" />
@@ -199,6 +201,9 @@
     <Content Include="Areas\User\Views\User\Index.cshtml" />
     <Content Include="Areas\User\Views\User\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dorm\Rooms.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Room\RoomsOfFloor.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -229,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Floor\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>

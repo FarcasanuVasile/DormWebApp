@@ -32,7 +32,7 @@ namespace DormWebApp.Areas.User.Controllers
         {
             var users = userRepository.GetAll();
             var roles = rolesRepository.GetAll();
-            IEnumerable<Models.User> usersView = users.Select(u => new Models.User {
+            IEnumerable<Models.User> usersView = users.Select(u => new Models.User() {
                 Id = u.Id,
                 FirstName = u.FirstName,
                 LastName = u.LastName,
@@ -49,6 +49,8 @@ namespace DormWebApp.Areas.User.Controllers
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "lastname_desc" : "";
             ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "username_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+
+            
 
             var search = from s in userRepository.GetAll() select s;
 
@@ -75,7 +77,6 @@ namespace DormWebApp.Areas.User.Controllers
                     usersView = usersView.OrderByDescending(s => s.FirstName);
                     break;
             }
-
             return View(usersView);
         }
         [HttpGet]
@@ -87,11 +88,6 @@ namespace DormWebApp.Areas.User.Controllers
         [HttpPost]
         public ActionResult Create(Models.User user)
         {
-            var roleToAssign = rolesRepository.GetById(2);
-            Models.Role roleConverted = new Models.Role() { Id = roleToAssign.Id , Name = roleToAssign.Name };
-            user.RegisterOn = DateTime.Now;
-            user.Role = roleConverted;
-            user.RoleId = roleConverted.Id;
             if (ModelState.IsValid)
             {
                 if (userServices.ExistingEmailAddress(user.Email))
