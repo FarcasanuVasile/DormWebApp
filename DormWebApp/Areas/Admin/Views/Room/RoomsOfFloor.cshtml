@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<DormWebApp.Areas.Admin.Models.Room>
 
 @{
-    ViewBag.Title = "Rooms Of Floor";
+    ViewBag.Title = ViewBag.FloorNo;
 }
 
-<h2>RoomsOfFloor</h2>
+<h2>ViewBag.FloorNo</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -26,13 +26,13 @@
 @foreach (var item in Model) {
     <tr class="room">
         <td>
-            @Html.DisplayFor(modelItem => item.RoomNo)
+           Room number: @Html.DisplayFor(modelItem => item.RoomNo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Capacity)
+           Capacity:  @Html.DisplayFor(modelItem => item.Capacity)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.IsAvaible)
+           Is Avaible: <span class="avaible @(@item.Capacity == 0 ? "no" : "yes")"></span> 
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

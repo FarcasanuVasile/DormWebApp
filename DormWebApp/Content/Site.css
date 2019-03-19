@@ -25,8 +25,24 @@ textarea {
 .room{
     display:flex;
     flex-direction:column;
+    border:1px solid #eaeaea;
 }
 .rooms-wrapper tbody{
     display:grid;
     grid-template-columns:repeat(4,25%);
+}
+.avaible{
+    display:inline-block;
+    width:15px;
+    height:15px;
+    border-radius:50%;
+}
+.avaible.yes{
+    background-color:#4cff00;
+}
+.avaible.no{
+    background-color:crimson;
+}
+.table tbody > tr.room > td {
+    border-top: none;
 }

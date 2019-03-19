@@ -46,6 +46,8 @@ namespace DormWebApp.Areas.Admin.Controllers
                 Capacity = r.Capacity,
 
             });
+
+            ViewBag.FloorNo = "Rooms of floor " + floor.FloorNo;
             return View(roomsView);
         }
         
