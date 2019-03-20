@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DormWebApp.Areas.Admin.Models.Floor>
+
+@{
+    ViewBag.Title = "GetFloorsByDorm";
+}
+
+<h2>GetFloorsByDorm</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfRooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FloorNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomsAvaible)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlacesAvaible)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfRooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FloorNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomsAvaible)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlacesAvaible)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink(linkText:"Rooms", actionName:"RoomsOfFloor",controllerName:"Room",routeValues:new { id=item.Id },htmlAttributes:null) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

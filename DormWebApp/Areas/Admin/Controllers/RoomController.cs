@@ -36,17 +36,24 @@ namespace DormWebApp.Areas.Admin.Controllers
             });
             return View(roomsView);
         }
+        [HttpGet]
         public ActionResult RoomsOfFloor(int id)
         {
             var floor = floorRepository.GetById(id);
-            var rooms = roomRepository.GetAll().Where(f => f.FloorId == id);
-            IEnumerable<Models.Room> roomsView = rooms.Select(r => new Models.Room() {
+            var rooms = roomRepository.GetAll();
+            var roomList = new List<Room>();
+            foreach(var room in rooms)
+            {
+                if(room.FloorId == floor.Id)
+                {
+                    roomList.Add(room);
+                }
+            }
+            IEnumerable<Models.Room> roomsView = roomList.Select(r => new Models.Room {
                 Id = r.Id,
                 RoomNo = r.RoomNo,
                 Capacity = r.Capacity,
-
             });
-
             ViewBag.FloorNo = "Rooms of floor " + floor.FloorNo;
             return View(roomsView);
         }

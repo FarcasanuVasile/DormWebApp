@@ -77,44 +77,6 @@ namespace DormWebApp.Areas.Admin.Controllers
                 return View(dorm);
             }
         }
-        [HttpGet]
-        public ActionResult GetFloorsOfDorm(int id)
-        {
-            var dorm = dormRepository.GetById(id);
-            var floors = floorRepository.GetAll();
-            ViewBag.DormName = dorm.Name;
-            var floorsList = new List<Domain.Entities.Floor>();
-            foreach (var floor in floors)
-            {
-                if (floor.DormId == dorm.Id)
-                {
-                    floorsList.Add(floor);
-                }
-            }
-            IEnumerable<Floor> floorsOfDormView = floorsList.Select(f => new Floor
-            {
-                Id = f.Id,
-                DormId = f.DormId,
-                FloorNo = f.FloorNo,
-                NoOfRooms = f.NumberOfRooms,
-                RoomsAvaible = f.RoomsAvaible,
-                PlacesAvaible = f.PlacesAvaible
-            });
-            return View(floorsOfDormView);
-        }
-        [HttpGet]
-        public ActionResult GetRoomsByFloorId (Dorm dorm, int id)
-        {
-            var floor = floorRepository.GetById(id);
-            var rooms = roomRepository.GetAll().Where(r => r.Id == id && r.Floor.DormId == dorm.Id);
-            IEnumerable<Room> roomsView = rooms.Select(r => new Room
-            {
-                Id = r.Id,
-                RoomNo = r.RoomNo,
-                IsAvaible = r.IsAvaible,
-                Capacity = r.Capacity
-            });
-            return View(roomsView);
-        }
+       
     }
 }

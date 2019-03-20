@@ -46,3 +46,10 @@ textarea {
 .table tbody > tr.room > td {
     border-top: none;
 }
+.showRoomAvaible{
+    display:flex;
+    align-items:center;
+}
+.showRoomAvaible span{
+    margin-left:5px;
+}

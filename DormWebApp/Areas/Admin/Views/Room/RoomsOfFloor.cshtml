@@ -4,7 +4,7 @@
     ViewBag.Title = ViewBag.FloorNo;
 }
 
-<h2>ViewBag.FloorNo</h2>
+<h2>@ViewBag.FloorNo</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -31,7 +31,7 @@
         <td>
            Capacity:  @Html.DisplayFor(modelItem => item.Capacity)
         </td>
-        <td>
+        <td class="showRoomAvaible">
            Is Avaible: <span class="avaible @(@item.Capacity == 0 ? "no" : "yes")"></span> 
         </td>
         <td>

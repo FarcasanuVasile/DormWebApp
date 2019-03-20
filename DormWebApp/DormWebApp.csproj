@@ -194,16 +194,16 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Dorm\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Dorm\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Dorm\GetFloorsOfDorm.cshtml" />
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
     <Content Include="Areas\User\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\User\Views\User\Index.cshtml" />
     <Content Include="Areas\User\Views\User\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Role\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Dorm\Rooms.cshtml" />
     <Content Include="Areas\Admin\Views\Room\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Room\RoomsOfFloor.cshtml" />
+    <Content Include="Areas\Admin\Views\Floor\GetFloorsByDorm.cshtml" />
+    <Content Include="Areas\Admin\Views\Floor\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -234,7 +234,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Views\Floor\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
